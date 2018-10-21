@@ -10,7 +10,9 @@ node_modules
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-
+/budgeter_api/node_modules
+/budgeter_api/yarn.lock
+.env
 # Editor directories and files
 .idea
 .vscode
