@@ -22,7 +22,7 @@
 
 <script>
 import { required, email, minLength, maxLength } from 'vuelidate/lib/validators'
-
+import UserService from '../services/UserService'
 export default {
   data () {
     return {
@@ -46,7 +46,15 @@ export default {
       this.$v.form.$touch()
       if (this.$v.form.$error) {
         this.$q.notify('Please review fields again.')
+        return
       }
+      UserService.signIn({
+        user: this.form.email,
+        password: this.form.email
+      }).catch(err => {
+        // this.error('Password not correct or the email is not registered')
+        console.log(err)
+      })
     }
   }
 }
