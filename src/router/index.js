@@ -21,5 +21,27 @@ export default function (/* { store, ssrContext } */) {
     base: process.env.VUE_ROUTER_BASE
   })
 
+  Router.beforeEach((to, from, next) => {
+    if (to.matched.some(record => record.meta.requiresAuth)) {
+      if (localStorage.getItem('jwt') === null) {
+        next({
+          path: '/user/login',
+          params: {nextUrl: to.fullPath}
+        })
+      } else {
+        JSON.parse(localStorage.getItem('user'))
+        next()
+      }
+    } else if (to.matched.some(record => record.meta.guest)) {
+      if (localStorage.getItem('jwt') == null) {
+        next()
+      } else {
+        next({ name: 'login' })
+      }
+    } else {
+      next()
+    }
+  })
+
   return Router
 }

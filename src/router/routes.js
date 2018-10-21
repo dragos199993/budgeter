@@ -4,15 +4,17 @@ const routes = [
     path: '/',
     component: () => import('layouts/MyLayout.vue'),
     children: [
-      { path: '', component: () => import('pages/Index.vue') }
+      { path: '',
+        component: () => import('pages/Index.vue'),
+        meta: {requiresAuth: true} }
     ]
   },
   {
     path: '/user',
     component: () => import('layouts/Authentication.vue'),
     children: [
-      { path: 'login', component: () => import('pages/Login.vue') },
-      { path: 'register', component: () => import('pages/Register.vue') }
+      { path: 'login', component: () => import('pages/Login.vue'), guest: true },
+      { path: 'register', component: () => import('pages/Register.vue'), guest: true }
     ]
   }
 ]

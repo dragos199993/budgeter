@@ -21,7 +21,7 @@ module.exports = function (ctx) {
     supportIE: true,
     build: {
       scopeHoisting: true,
-      // vueRouterMode: 'history',
+      vueRouterMode: 'history',
       // vueCompiler: true,
       // gzip: true,
       // analyze: true,
@@ -70,7 +70,6 @@ module.exports = function (ctx) {
         'Notify'
       ]
       // iconSet: ctx.theme.mat ? 'material-icons' : 'ionicons'
-      // i18n: 'de' // Quasar language
     },
     // animations: 'all' --- includes all animations
     animations: [],
