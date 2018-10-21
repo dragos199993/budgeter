@@ -5,7 +5,8 @@ module.exports = function (ctx) {
     // app plugins (/src/plugins)
     plugins: [
       'i18n',
-      'axios'
+      'axios',
+      'vuelidate'
     ],
     css: [
       'app.styl'
@@ -55,7 +56,9 @@ module.exports = function (ctx) {
         'QListHeader',
         'QItem',
         'QItemMain',
-        'QItemSide'
+        'QItemSide',
+        'QField',
+        'QInput'
       ],
       directives: [
         'Ripple'

@@ -30,11 +30,16 @@
         no-border
         link
         inset-delimiter
+        dense
       >
         <q-list-header>Main menu</q-list-header>
-        <q-item to="/home">
-          <q-item-side icon="school" />
-          <q-item-main label="Docs" sublabel="quasar-framework.org" />
+        <q-item to="/">
+          <q-item-side icon="home" />
+          <q-item-main label="Home" sublabel="All you need in one page" />
+        </q-item>
+        <q-item to="/user/login">
+          <q-item-side icon="person" />
+          <q-item-main label="Authenticate" sublabel="Create or use an account" />
         </q-item>
       </q-list>
     </q-layout-drawer>
